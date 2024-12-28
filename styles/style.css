@@ -43,10 +43,10 @@ ol {
 
 .visually-hidden {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
@@ -77,8 +77,9 @@ ol {
 
 .content {
   display: grid;
+  grid-template-columns: 711px 399px;
   grid-template-areas: 
-  "result content__details";
+  "result content-list";
   justify-content: center;
   align-items: end;
   align-content: center;
@@ -88,12 +89,11 @@ ol {
 
 .result {
   grid-area: result;
-  width: 711px;
+
 }
 
 .content__details {
-  grid-area: content__details;
-  width: 399px;
+  grid-area: content-list;
 }
 
 .search-form {
@@ -104,20 +104,25 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
   height: 298px;
   margin-top: 26px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 0 2px;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 390px;
-  margin-bottom: 30px;
 }
 
 .result__video-container {
+  position: relative;
   height: 386px;
 }
 
@@ -131,25 +136,25 @@ ol {
 .content__video-card {
   display: flex;
   align-items: start;
-  height: 103px;
 }
 
 .content__video-card-thumbnail {
-  height: 100%;
-  min-width: 194px;
+  width: 194px;
+  height: 103px;
   object-fit: cover;
   object-position: center;
 }
 
 .content__video-card-description-container {
   flex-grow: 1;
+  width: 196px;
 }
 
 .search-form__fieldset-title {
-  font-weight: 400;
-  font-size: 18px;
-  font-family: inherit;
   margin-bottom: 5px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: inherit;
   line-height: 21.6px;
 }
 
@@ -170,27 +175,32 @@ ol {
 }
 
 .content__card-link {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 .content__video-card-title {
+  overflow: hidden;
   font-family: Oswald;
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
-  white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
+  display: -webkit-box;
+  padding-top: 6px;
+  overflow: hidden;
   font-family: inherit;
   font-weight: 400;
-  font-size: 18px;
+  font-size: inherit;
   line-height: 16.2px;
-  padding-top: 6px;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
 }
 
 .search-form__checkbox-list {
@@ -200,8 +210,8 @@ ol {
 
 .search-form__label {
   display: flex;
-  width: fit-content;
   gap: 5px;
+  width: fit-content;
 }
 
 .search-form__textfield {
@@ -236,8 +246,13 @@ ol {
 }
 
 .search-form__submit-button {
-  width: 194px;
   align-self: end;
+  width: 194px;
+}
+
+.more-button {
+  width: 100%;
+  padding: 6px 0;
 }
 
 
