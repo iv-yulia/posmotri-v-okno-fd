@@ -54,13 +54,33 @@ ol {
 .button {
   height: 34px;
   border: 1px solid #fff;
-  padding: 0;
+
   color: inherit;
   font-family: inherit;
   font-weight: 700;
   font-size: inherit;
   background-color: transparent;
   cursor: pointer;
+  padding: 6px 0;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.button:active {
+  background-color: #545050;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -105,20 +125,25 @@ ol {
 
 .content__list-container {
   position: relative;
-  height: 298px;
-  margin-top: 26px;
-  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  height: 298px;
+  margin-top: 26px;
   padding: 0 2px;
+  overflow: auto;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-top: 2px;
+}
+
+.content__list-item {
+  padding-bottom: 2px;
 }
 
 .result__video-container {
@@ -175,8 +200,31 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   color: inherit;
   text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 1px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__video-card-title {
@@ -212,6 +260,8 @@ ol {
   display: flex;
   gap: 5px;
   width: fit-content;
+  align-items: center;
+  cursor: pointer;
 }
 
 .search-form__textfield {
@@ -223,9 +273,41 @@ ol {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  line-height: 21.6px;
   background-color: transparent;
   appearance: none;
   caret-color: #fff;
+}
+
+.search-form__textfield::placeholder {
+  opacity: 0.7;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+/*.search-form__label:has(:active) {
+  outline: none;
+}*/
+
+.search-form__textfield:active {
+  outline: 1px solid #fff;
+}
+
+.search-form__label:not(:first-of-type):hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+
+.search-form__textfield:hover {
+  text-decoration: none;
 }
 
 .search-form__pseudo-checkbox {
@@ -240,8 +322,6 @@ ol {
   content: "";
   position: absolute;
   inset: 1px;
-  width: 15px;
-  height: 15px;
   background-color: #fff;
 }
 
@@ -251,8 +331,7 @@ ol {
 }
 
 .more-button {
-  width: 100%;
-  padding: 6px 0;
+  width: 390px;
 }
 
 
