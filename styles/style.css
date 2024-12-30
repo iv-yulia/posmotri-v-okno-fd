@@ -308,8 +308,6 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  position: relative;
-  display: inline-block;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
@@ -317,9 +315,12 @@ ol {
 
 .search-form__checkbox:checked + span::after {
   content: '';
-  position: absolute;
-  inset: 1px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: auto;
   background-color: #fff;
+  margin-top: 1px;
 }
 
 .search-form__submit-button {
